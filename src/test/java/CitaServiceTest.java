@@ -76,7 +76,7 @@ class CitaServiceTest
     @DisplayName("Campos vacíos")
     void test6_camposVacios() {
         String resultado = CitaService.validar(
-                "",         
+                "",
                 "Carlos",
                 "12345678",
                 LocalDate.now().plusDays(1)
