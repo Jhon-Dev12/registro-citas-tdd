@@ -14,6 +14,9 @@ public class CitaService {
         if (!documento.matches("\\d{8}")) {
             return "Ingrese un número de documento válido";
         }
+        if (!fecha.isAfter(LocalDate.now())) {
+            return "La fecha de la cita debe ser posterior a la fecha actual";
+        }
 
         return "La cita ha sido registrada correctamente";
     }

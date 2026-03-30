@@ -66,7 +66,7 @@ class CitaServiceTest
                 "C123",
                 "Carlos",
                 "12345678",
-                LocalDate.now()   
+                LocalDate.now()
         );
 
         assertEquals("La fecha de la cita debe ser posterior a la fecha actual", resultado);
