@@ -46,5 +46,18 @@ class CitaServiceTest
         assertEquals("El nombre del paciente debe tener al menos cinco caracteres alfabéticos", resultado);
     }
 
+    @Test
+    @DisplayName("Documento inválido")
+    void test4_documentoInvalido() {
+        String resultado = CitaService.validar(
+                "C123",
+                "Carlos",
+                "1234",
+                LocalDate.now().plusDays(1)
+        );
+
+        assertEquals("Ingrese un número de documento válido", resultado);
+    }
+
 
 }
