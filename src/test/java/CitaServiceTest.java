@@ -38,7 +38,7 @@ class CitaServiceTest
     void test3_nombreInvalido() {
         String resultado = CitaService.validar(
                 "C123",
-                "Ana",   
+                "Alex",
                 "12345678",
                 LocalDate.now().plusDays(1)
         );
