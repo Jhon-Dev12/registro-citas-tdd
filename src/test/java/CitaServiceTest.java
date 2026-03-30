@@ -59,5 +59,18 @@ class CitaServiceTest
         assertEquals("Ingrese un número de documento válido", resultado);
     }
 
+    @Test
+    @DisplayName("Fecha inválida")
+    void test5_fechaInvalida() {
+        String resultado = CitaService.validar(
+                "C123",
+                "Carlos",
+                "12345678",
+                LocalDate.now()   
+        );
+
+        assertEquals("La fecha de la cita debe ser posterior a la fecha actual", resultado);
+    }
+
 
 }
