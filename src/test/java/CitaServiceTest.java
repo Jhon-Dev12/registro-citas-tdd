@@ -33,7 +33,18 @@ class CitaServiceTest
         assertEquals("Ingrese un código de cita válido", resultado);
     }
 
-    
+    @Test
+    @DisplayName("Nombre inválido")
+    void test3_nombreInvalido() {
+        String resultado = CitaService.validar(
+                "C123",
+                "Ana",   
+                "12345678",
+                LocalDate.now().plusDays(1)
+        );
+
+        assertEquals("El nombre del paciente debe tener al menos cinco caracteres alfabéticos", resultado);
+    }
 
 
 }
