@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -7,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CitaServiceTest
 {
     @Test
+    @DisplayName("Prueba con código de cita válido")
     void test1_codigoValido() {
         String resultado = CitaService.validar(
                 "C123",
@@ -16,6 +18,19 @@ class CitaServiceTest
         );
 
         assertEquals("La cita ha sido registrada correctamente", resultado);
+    }
+
+    @Test
+    @DisplayName("Prueba con código de cita inválido")
+    void test2_codigoInvalido() {
+        String resultado = CitaService.validar(
+                "1234",   
+                "Carlos",
+                "12345678",
+                LocalDate.now().plusDays(1)
+        );
+
+        assertEquals("Ingrese un código de cita válido", resultado);
     }
 
 }
