@@ -24,7 +24,7 @@ class CitaServiceTest
     @DisplayName("Prueba con código de cita inválido")
     void test2_codigoInvalido() {
         String resultado = CitaService.validar(
-                "1234",   
+                "1234",
                 "Carlos",
                 "12345678",
                 LocalDate.now().plusDays(1)
@@ -32,5 +32,8 @@ class CitaServiceTest
 
         assertEquals("Ingrese un código de cita válido", resultado);
     }
+
+    
+
 
 }

@@ -2,7 +2,12 @@ import java.time.LocalDate;
 
 public class CitaService {
 
-    public static String validar(String c123, String carlos, String number, LocalDate localDate) {
+    public static String validar(String codigo, String nombre, String documento, LocalDate fecha) {
+
+        if (!codigo.matches("C\\d{3}")) {
+            return "Ingrese un código de cita válido";
+        }
+
         return "La cita ha sido registrada correctamente";
     }
 }
