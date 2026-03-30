@@ -52,7 +52,7 @@ class CitaServiceTest
         String resultado = CitaService.validar(
                 "C123",
                 "Carlos",
-                "1234",
+                "1234678",
                 LocalDate.now().plusDays(1)
         );
 

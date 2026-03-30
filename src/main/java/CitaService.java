@@ -11,6 +11,9 @@ public class CitaService {
         if (!nombre.matches("[a-zA-Z]{5,}")) {
             return "El nombre del paciente debe tener al menos cinco caracteres alfabéticos";
         }
+        if (!documento.matches("\\d{8}")) {
+            return "Ingrese un número de documento válido";
+        }
 
         return "La cita ha sido registrada correctamente";
     }
