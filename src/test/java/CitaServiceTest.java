@@ -72,5 +72,18 @@ class CitaServiceTest
         assertEquals("La fecha de la cita debe ser posterior a la fecha actual", resultado);
     }
 
+    @Test
+    @DisplayName("Campos vacíos")
+    void test6_camposVacios() {
+        String resultado = CitaService.validar(
+                "",         
+                "Carlos",
+                "12345678",
+                LocalDate.now().plusDays(1)
+        );
+
+        assertEquals("Debe ingresar todos los datos requeridos", resultado);
+    }
+
 
 }
